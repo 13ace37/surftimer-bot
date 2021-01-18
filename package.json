@@ -1,0 +1,23 @@
+{
+  "name": "surftimer-bot",
+  "version": "0.0.1",
+  "description": "A Discord Bot for SurfTimer commands.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/13ace37/surftimer-bot.git"
+  },
+  "author": "Riccardo \"ace\" H.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/13ace37/surftimer-bot/issues"
+  },
+  "homepage": "https://github.com/13ace37/surftimer-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "mysql": "^2.18.1"
+  }
+}
