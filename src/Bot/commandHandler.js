@@ -5,7 +5,7 @@ module.exports = (message, Client) => {
 	message.rawContent = message.content;
 	message.content = message.content.slice(Client.Config.prefix.length);
 	message.args = message.content.split(" ");
-	message.args.shift();
+	message.command = message.args.shift();
 
-	console.log(message.rawContent, message.content, message.args);
+	
 }
