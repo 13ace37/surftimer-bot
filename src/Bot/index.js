@@ -20,7 +20,6 @@ module.exports = class Bot {
 				this.Commands[Command.split(".")[Command.split(".").length - 2]] = new require(__dirname + "/Command/" + Command);
 			});
 			delete this.Commands.raw;
-			console.log(this.Commands);
 		});
 	}
 }
