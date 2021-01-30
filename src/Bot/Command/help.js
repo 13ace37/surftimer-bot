@@ -7,7 +7,7 @@ module.exports = class extends Command {
 	run() {
 		this.tempContent = "~ Commands\n";
 		Object.keys(this.Client.Commands).forEach(command => {
-			this.tempContent += this.Client.Config.prefix + command + " - " + (new this.Client.Commands[command]().getInfo() || "N/A") + "\n";
+			if (new this.Client.Commands[command]().getInfo() != false) this.tempContent += this.Client.Config.prefix + command + " - " + (new this.Client.Commands[command]().getInfo() || "N/A") + "\n";
 		});
 		this.send(this.tempContent);
 		delete this.tempContent;

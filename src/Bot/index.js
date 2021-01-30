@@ -1,12 +1,13 @@
 module.exports = class Bot {
-	constructor () {
+	constructor (Config) {
 		this.init();
-		this.registerCommands();
+		this.createMysqlConnections(Config);
 	}
 
 	init() {
 		this.Discord = require("discord.js");
 		this.Client = new this.Discord.Client;
+		this.registerCommands();
 		this.Client.on("message", (message) => require(__dirname + "/commandHandler")(message, this));
 	}
 
@@ -21,5 +22,15 @@ module.exports = class Bot {
 			});
 			delete this.Commands.raw;
 		});
+	}
+
+	createMysqlConnections(Config) {
+		this.MysqlConnections = {};
+		
+		this.tmp = require(__dirname + "/Database");
+		Object.keys(Config).forEach(mysqlConnection => {
+			this.MysqlConnections[mysqlConnection] = new this.tmp(Config[mysqlConnection]);
+		});
+		delete this.tmp;
 	}
 }

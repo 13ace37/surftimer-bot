@@ -105,3 +105,6 @@ dist
 
 # Leak Protection
 config.js
+
+# Local Testing Stuff
+src/Bot/Command/~*
